@@ -1,0 +1,74 @@
+{% extends "layout.html" %} {% block title %} Register {% endblock %} {% block main %}
+
+
+<div class="container-intro">
+  <div class="sidebar-register" >
+    <div class="sidebar-text">
+      <div class="nav-logo">
+                
+        <h5>makersplace</h5>
+      
+    </div>
+
+      <h2>Discover makers of the 3d printing world</h2>
+    </div>
+    <div class="sidebar-image">
+      <figure class="figure">
+        <img src="static/register.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure."  />
+        <figcaption class="figure-caption">Art by <u>brgfx</u></figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="sidebar-form">
+    <h3>Sign up to Makersplace</h3>
+    <div class="sidebar-form-secondary">
+      <p>Don't have an account? <a href="/login">Login</a></p>
+    </div>
+    <form class="row g-3" method="post" action="/register" >
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" name="username" placeholder="Username">
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" name="password"  placeholder="Password">
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+          </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Password confirmation</label>
+            <input type="password" class="form-control" id="confirmation" name="confirmation" placeholder="Password Confirmation">
+          </div>
+        
+        <div class="col-12">
+          <label for="inputAddress" class="form-label">Description</label>
+          <input type="text" class="form-control" id="description" name="description" placeholder="Enter a description of yourself">
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Location</label>
+            <input type="text" class="form-control" id="location" name="location" placeholder="Location">
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Number</label>
+            <input type="text" class="form-control" id="number" name = "number" placeholder="Number">
+          </div>
+ 
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              I agree to the terms and conditions.
+            </label>
+          </div>
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary value=Register">Sign in</button>
+        </div>
+      </form>
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My listings
+{% endblock %}
+
+{% block main %}
+
+
+{% if get_flashed_messages() %}
+
+{% else %}
+
+<div class="mylistings__container">
+
+
+
+<br><br><br>
+<h3>My vendor listings</h3>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Delivery</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    {% for vendorlistings in data_list_vendor %}
+    <tr>
+      <td scope="row"><img src="data:;base64,{{ vendorlistings.10 }}" class="img-responsive" style="object-fit: cover; height:60px; width: 60px;"></td>
+      <td>{{ vendorlistings.1  }}</td>
+      <td>{{ vendorlistings.6  }}</td>
+      <td>{{ vendorlistings.8  }}</td>
+      <td> 
+        <form action="/delete" method="post">
+          <input name="number" type="hidden" value="{{  productlistings.4  }}">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+ <br><br><br>
+
+  <h3>My product listings</h3>
+<table class="table ">
+  <thead >
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
+      <th scope="col">Budget</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    {% for productlistings in data_list_product %}
+    <tr>
+      <td scope="row"><img src="data:;base64,{{ productlistings.10 }}" class="img-responsive" style="object-fit: cover; height:60px; width: 60px;"></td>
+      <td>{{ productlistings.1  }}</td>
+      <td>{{ productlistings.5  }}</td>
+      <td>{{ productlistings.6  }}</td>
+      <td> 
+        <form action="/delete" method="post">
+          <input name="number" type="hidden" value="{{  productlistings.4  }}">
+          <input type="submit" value="Delete">
+        </form>
+      </td>
+    </tr>
+  {% endfor %}
+</table>
+
+
+
+{% endif %}
+</div>
+{% endblock %}
+
+

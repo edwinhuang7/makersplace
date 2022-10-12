@@ -1,0 +1,111 @@
+{% extends "layout.html" %} 
+
+{% block title %} 
+Index 
+{% endblock %}
+{% block main %} 
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<div class="index-container">
+  <div class="top-flexbox-container">
+    <div class="top-flexbox-item">
+      <svg viewBox="0 0 100 100" width="100" height="100" transform="translate(0,40)">
+        <title>Tyler</title>
+        <defs>
+          <circle id="circle" cx="50" cy="50" r="49" vector-effect="non-scaling-stroke" />
+          <clipPath id="circle-clip">
+            <use xlink:href="#circle" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#circle-clip)">
+          <use xlink:href="#circle" fill="var(--red-color)" opacity="0.25" />
+          <image href="static/person-icon-1.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+        </g>
+      </svg>
+      <div class="arrow-down">
+        <img src="static/arrow.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." style="mix-blend-mode: darken" />
+        <svg viewBox="0 0 100 100" width="100" height="100"></svg>
+      </div>
+      <svg viewBox="0 0 100 100" width="60" height="60">
+        <title>Tyler</title>
+        <defs>
+          <circle id="circle" cx="50" cy="50" r="49" vector-effect="non-scaling-stroke" />
+          <clipPath id="circle-clip">
+            <use xlink:href="#circle" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#circle-clip)">
+          <use xlink:href="#circle" fill="var(--aqua-color)" opacity="0.25" />
+          <image href="static/person-icon-2.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+        </g>
+      </svg>
+    </div>
+
+    <div class="top-flexbox-item" id="top-main">
+      <div class="small-banner">
+        <p style="margin-bottom: 0">★Sharing platform</p>
+      </div>
+      <div class="title-text">
+        <h1>
+        SOLUTION<br>
+         THAT WORKS FOR YOU <br>
+        </h1>
+      </div>
+
+      <div style="width: 10px; height: 100%; background-color: var(--yellow-color); display: inline-block;"></div>
+      <div style="width: 10px; height: 100%; background-color: var(--red-color); display: inline-block"></div>
+      <div style="width: 10px; height: 100%; background-color: var(--aqua-color); display: inline-block"></div>
+
+      <div class="grid-graphic">
+        <img src="static/grid-graphic.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." style="mix-blend-mode: darken" />
+      </div>
+    </div>
+
+    <div class="top-flexbox-item">
+     <div class="circle">Check out our listings!</div>
+     
+      <div class="arrow-up">
+        <img src="static/arrow.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." style="mix-blend-mode: darken" />
+        <svg viewBox="0 0 100 100" width="100" height="100"></svg>
+      </div>
+      <svg viewBox="0 0 100 100" width="100" height="100" transform="translate(-60,-30)">
+        <title>Tyler</title>
+        <defs>
+          <circle id="circle" cx="50" cy="50" r="49" vector-effect="non-scaling-stroke" />
+          <clipPath id="circle-clip">
+            <use xlink:href="#circle" />
+          </clipPath>
+        </defs>
+        <g clip-path="url(#circle-clip)">
+          <use xlink:href="#circle" fill="var(--purple-color)" opacity="0.25" />
+          <image href="static/person-icon-3.png" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" />
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="bottom-flexbox-container">
+    <div class="bottom-flexbox-item">
+      <p>"Great time saver and lots of quality vendors!"</p>
+      <img src="static/company-logo.png" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure." style="mix-blend-mode: darken; width: 50%" />
+    </div>
+
+    <div class="bottom-flexbox-item" id="bottom-main">
+      <h1 style="font-weight: bold;">720+</h1>
+      <p>metrics and objectives to cater to developing your 3d printed product</p>
+    </div>
+
+    <div class="bottom-flexbox-item">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
+      <p>300+ client reviews</p>
+    </div>
+  </div>
+</div>
+
+ {% endblock %}

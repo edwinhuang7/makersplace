@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Product listing
+{% endblock %}
+
+{% block main %}
+
+<br></br>
+<form class = "form-group" input action="/listingproduct" method="post" enctype="multipart/form-data">
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example3">Listing Title</label>
+    <input type="text" id="form6Example3" class="form-control" name="name" />
+   
+  </div>
+
+  <!-- Text input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example4">Location</label>
+    <input type="text" id="form6Example4" class="form-control" name="location" />
+    
+  </div>
+
+  <!-- Email input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example5">Email</label>
+    <input type="email" id="form6Example5" class="form-control" name="email" />
+    
+  </div>
+
+  <!-- Number input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Number</label>
+    <input type="number" id="form6Example6" class="form-control" name="number"/>
+    
+  </div>
+
+  <!-- Message input -->
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example7">Description</label>
+    <textarea class="form-control" id="form6Example7" rows="4" name="description"></textarea>
+    
+  </div>
+
+  <div class="form-outline mb-4">
+    <label class="form-label" for="form6Example6">Budget</label>
+    <input type="number" id="form6Example6" class="form-control" name="budget"/>
+    
+  </div>
+
+  
+    <div class="form-group" style="padding-left:0;padding-right:0;">
+    <label for="exampleInputPassword1" ></label>
+    <input type="file" id="image_input" accept="image/png, image/jpg" class="hidden" name="file" ><br>
+    <div id="display_image"></div>
+    </div>
+
+  <div class="form-check d-flex justify-content-center mb-4" style="float:left;">
+    <input class="form-check-input me-2" type="checkbox" value="Yes" id="form6Example8" checked name ="meetup"/>
+    <label class="form-check-label" for="form6Example8"> I am open to public meetup </label>
+  </div>
+
+  <div class="form-check d-flex justify-content-center mb-4">
+    <input class="form-check-input me-2" type="checkbox" value="Yes" id="form6Example8" checked name ="delivery"/>
+    <label class="form-check-label" for="form6Example8"> I am open to delivery </label>
+  </div>
+  <!-- <input type="file" name="file"/> -->
+  <!-- Submit button -->
+  <input type="submit" class="btn btn-primary btn-block mb-4"></input>
+
+
+  
+
+</form>
+
+{% endblock %}
+
+

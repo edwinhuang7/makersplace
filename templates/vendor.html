@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Vendor
+{% endblock %}
+
+{% block main %}
+<header>
+  <div class="p-5 text-center ">
+    <h1 class="mb-3">Explore</h1>
+    <h4 class="mb-3">Discover and find 3d printing vendors to make your designs a reality</h4>
+  </div>
+</header>
+
+<div class="shell">
+  <div class="container">
+    <div class="row">
+    <div class="row"> 
+
+      {% for vendorlistings in data_list %}
+      <div class="col-md-3">
+        <div class="wsk-cp-product">
+          <div class="wsk-cp-img"><img src="data:;base64,{{ vendorlistings.10 }}" alt="Product" class="img-responsive" /></div>
+          <div class="wsk-cp-text">
+            <div class="category">
+              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Contact Us</button>
+            </div>
+            <div class="title-product">
+              <h3>{{  vendorlistings.1  }}</h3>
+            </div>
+            <div class="description-prod">
+              <p>{{ vendorlistings.6 }}</p>
+            
+              
+            </div>
+            <div class="card-footer">
+              <div class="wcf-left"><span><b>Delivery available:</b> {{ vendorlistings.8}} </span></div>
+              <div class="wcf-left"><span ><b>Email:</b> {{ vendorlistings.3}} </span></div>
+              <div class="wcf-left"><span ><b>Location:</b> {{ vendorlistings.2}} </span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Email the vendor</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="modal-content" style="border: none;">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt = "" style="height: 100px; width: 100px; margin:auto;">
+                <form action = "/product" method = 'post' class="modal-form">
+                  <div class="form-outline mb-4"><br>
+                    <label class="form-label" for="form6Example4">Email Recipient</label>
+                    <input type="text" id="form6Example4" class="form-control" name="email" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Title</label>
+                    <input type="text" id="form6Example4" class="form-control" name="title" />
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="form6Example4">Body</label>
+                    <input type="text" id="form6Example4" class="form-control" name="body"/>
+                  </div>
+                  <button  class="btn btn-primary" type="submit">Send Email</button>
+                </form>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
