@@ -1,8 +1,9 @@
 {
   "dependencies": {
     "serve": "^14.0.1",
-    "start": "serve -s build"
- 
 
 }
+
+
+
 
