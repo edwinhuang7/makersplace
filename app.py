@@ -2,7 +2,6 @@ from html.entities import name2codepoint
 from pickle import FALSE
 import re
 import os
-from tkinter.messagebox import NO
 from flask import Flask, flash, redirect, render_template, request, session
 from flask_mail import Mail, Message
 from flask_session import Session
