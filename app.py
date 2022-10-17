@@ -25,7 +25,9 @@ app.config['MAIL_SUPRESS_SEND'] = False
 app.config['SECURECONNECTION']=FALSE
 
 
-db = SQL("sqlite:///makersplace.db")
+# db = SQL("sqlite:///makersplace.db")
+db = SQL("postgresql://wkmuqbrtzfrpfj:4c599a25d03303fafca91c62b3f4acf2859d49fdf261cc85572e0a64d86e5c35@ec2-54-147-36-107.compute-1.amazonaws.com:5432/ddfu28nlqel0ts")
+
 
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -142,9 +144,11 @@ def register():
         hash = generate_password_hash(password)
 
         try:
+            print("executing")
             db.execute("INSERT INTO users(username, hash, email, description, location, number) VALUES (?,?,?,?,?,?)", username, hash, email, description, location, number)
             return redirect("/")
-        except:
+        except Exception as e:
+            print(e)
             flash("Username has already been registered!")
 
 
@@ -378,3 +382,7 @@ def delete():
 
 
     return redirect("/mylistings")
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, port=port)

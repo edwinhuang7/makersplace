@@ -25,4 +25,3 @@ flask run
 
 - The user interface of this project is heavily inspired by works on www.dribbble.com .
 - Thankyou to the Cs50 by Harvard course for making this project possible.
-
